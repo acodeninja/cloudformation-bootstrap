@@ -56,7 +56,7 @@ localstack-stop: ## Stop the localstack service if it is running
 .installed/aws:
 	@echo "Installing AWS CLI"
 ifeq ($(OPERATING_SYSTEM), WIN)
-	@& 'C:\Program Files\Docker\Docker\DockerCli.exe' -SwitchLinuxEngine
+	@'C:\Program Files\Docker\Docker\DockerCli.exe' -SwitchLinuxEngine
 endif
 	@docker pull amazon/aws-cli
 	@mkdir -p .installed/
@@ -65,7 +65,7 @@ endif
 .installed/localstack:
 	@echo "Installing LocalStack"
 ifeq ($(OPERATING_SYSTEM), WIN)
-	@& 'C:\Program Files\Docker\Docker\DockerCli.exe' -SwitchLinuxEngine
+	@'C:\Program Files\Docker\Docker\DockerCli.exe' -SwitchLinuxEngine
 endif
 	@docker pull localstack/localstack
 	@mkdir -p .installed/
@@ -74,7 +74,7 @@ endif
 .installed/cfn-lint:
 	@echo "Installing Cloudformation Lint"
 ifeq ($(OPERATING_SYSTEM), WIN)
-	@& 'C:\Program Files\Docker\Docker\DockerCli.exe' -SwitchLinuxEngine
+	@'C:\Program Files\Docker\Docker\DockerCli.exe' -SwitchLinuxEngine
 endif
 	@mkdir -p .installed/
 	@git clone --depth=1 https://github.com/aws-cloudformation/cfn-lint.git .installed/cfn-lint
