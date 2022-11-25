@@ -8,7 +8,7 @@ jobs:
     runs-on: ${{ matrix.os }}
     steps:
       - uses: actions/checkout@v3
-      - if: ${{ matrix.os == "macos-latest" }}
+      - if: ${{ matrix.os == 'macos-latest' }}
         run: |
           brew install docker docker-machine
           brew install virtualbox --cask
