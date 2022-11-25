@@ -1,0 +1,11 @@
+name: Check Makefile
+on: push
+jobs:
+  install:
+    strategy:
+      matrix:
+        os: [ ubuntu-latest, windows-latest, macos-latest ]
+    runs-on: ${{ matrix.os }}
+    steps:
+      - uses: actions/checkout@v3
+      - run: make install
