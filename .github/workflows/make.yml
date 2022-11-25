@@ -18,5 +18,7 @@ jobs:
           sudo mkdir -p /etc/vbox
           echo "* 0.0.0.0/0 ::/0" | sudo tee /etc/vbox/networks.conf
           docker-machine create --driver virtualbox default
+          docker-machine env default
+      - run: |
           eval $(docker-machine env default)
-      - run: make install
+          make install
